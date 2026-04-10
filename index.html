@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayan Bhau... Sorry 😭</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 750px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      color: #ffdd57;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+      opacity: 0.95;
+    }
+
+    .highlight {
+      color: #ffb6c1;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      background: #ff4b5c;
+      color: white;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 75, 92, 0.7);
+      margin-top: 10px;
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      background: #ff2e44;
+    }
+
+    .hidden-message {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
+      animation: popUp 0.8s ease;
+    }
+
+    .hidden-message h2 {
+      color: #90ee90;
+      margin-bottom: 10px;
+    }
+
+    .hidden-message p {
+      font-size: 1rem;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 25px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes popUp {
+      from {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>AYYY SAYAN BHAU 😭🙏</h1>
+
+    <p>
+      Hey <span class="highlight">SAYAN ROY</span>...  
+      Mi ekdum <b>ghatiya</b> kaam kelay re bhau 😭
+    </p>
+
+    <p>
+      Mala mahit ahe mi <b>tujha trust</b> todla...  
+      Ani honestly bolto, mi swata var pan ragavtoy 💀
+    </p>
+
+    <p>
+      Bhau... apan lahan pana pasun friends ahot re.  
+      <span class="highlight">Evde varsha chi dosti</span> asa ekdum simple mistake mule jau deu naka 😔
+    </p>
+
+    <p>
+      Mi excuse nahi det ahe...  
+      Fakt ekch bolto: <b>"Mi kharach sorry ahe re."</b>
+    </p>
+
+    <p>
+      Ani ho... jar tu maaf nahi kelas tar  
+      mi <b>pav bhaji</b> khana band karun takel 😭😂  
+      (Ha motha sacrifice ahe bhau!)
+    </p>
+
+    <button onclick="showMessage()">Click kar re bhau ❤️</button>
+
+    <div class="hidden-message" id="msg">
+      <h2>THANK YOU BHAU 😭❤️</h2>
+      <p>
+        Mi promise karto... ata pasun asa kahi pan nahi honar.  
+        Trust parat build karayla time lagel, pan mi full effort takel 💯
+      </p>
+
+      <p>
+        Tu fakt friend nahi... tu tar <b>family</b> ahe re bhau 🤝❤️
+      </p>
+
+      <p>
+        Chal... ek kaam kar...  
+        "maaf kela" mhanun ek message kar 😭😂
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("msg").style.display = "block";
+      createFloatingStuff();
+    }
+
+    function createFloatingStuff() {
+      let icons = ["❤️", "😂", "😭", "🙏", "🔥", "💀", "🤝", "🥺"];
+
+      for (let i = 0; i < 30; i++) {
+        let emoji = document.createElement("div");
+        emoji.classList.add("emoji");
+        emoji.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        emoji.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+          emoji.remove();
+        }, 6000);
+      }
+    }
+  </script>
+
+</body>
+</html>
